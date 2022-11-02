@@ -1,0 +1,157 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://map/Player.gd" type="Script" id=2]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://map/wall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://light.jpg" type="Texture" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="StreamTexture" id=3]
+flags = 4
+load_path = "res://.import/Player.png-3b381e068d1d74cc2895fb9be41402b0.stex"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 9, 9 )
+
+[node name="World" type="Node2D"]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 36.664, 51.304 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = SubResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.6, 0.6 )
+smoothing_enabled = true
+
+[node name="Light2D" type="Light2D" parent="Player"]
+position = Vector2( -0.635, 0.592 )
+texture = ExtResource( 5 )
+color = Color( 0.423529, 0.54902, 0.972549, 1 )
+shadow_enabled = true
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 984, 326 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 500, 502 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 650, 77 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 469, 174 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 3 )]
+position = Vector2( 789, 348 )
+
+[node name="Enemy9" parent="." instance=ExtResource( 3 )]
+position = Vector2( 730, 455 )
+
+[node name="Enemy10" parent="." instance=ExtResource( 3 )]
+position = Vector2( 930, 115 )
+
+[node name="Enemy11" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1148, 88 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160, 465 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 3 )]
+position = Vector2( 55, 339 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 255, 65 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0.0784314, 0.235294, 0.313726, 1 )
+position = Vector2( 1118, 635 )
+scale = Vector2( 241.484, 121.234 )
+z_index = -1
+texture = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Node2D" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 7, 216 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D7" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 7, 216 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D8" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 8, 495 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D11" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 298, 364 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D12" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 1024, 225 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D13" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 970, 496 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D14" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 401, 287 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D5" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 200, 219 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D6" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 119, 312 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D16" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 620, 451 )
+scale = Vector2( 1, 25 )
+
+[node name="Node2D2" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 96, 24 )
+scale = Vector2( 10, 1 )
+
+[node name="Node2D3" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 256, 24 )
+scale = Vector2( 10, 1 )
+
+[node name="Node2D4" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 549, 24 )
+scale = Vector2( 60, 1 )
+
+[node name="Node2D9" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 492, 687 )
+scale = Vector2( 60, 1 )
+
+[node name="Node2D10" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 653, 566 )
+scale = Vector2( 60, 1 )
+
+[node name="Node2D15" parent="TileMap" instance=ExtResource( 4 )]
+position = Vector2( 876, 226 )
+scale = Vector2( 60, 1 )
+
+[connection signal="body_entered" from="Player/Area2D" to="Player" method="_on_Area2D_body_entered"]
